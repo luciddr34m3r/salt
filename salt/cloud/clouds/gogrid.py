@@ -257,6 +257,8 @@ def create(vm_):
                 )
             )
 
+    tmpData = {'size': kwargs['size'], 'name': kwargs['name'], 'image': kwargs['image'], 'public_ips': data.public_ips, 'private_ips': data.private_ips, 'state': 'RUNNING', 'location': None, 'id': data.uuid}
+
     ret.update(data)
 
     if 'password' in data.extra:
