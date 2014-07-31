@@ -257,9 +257,11 @@ def create(vm_):
                 )
             )
 
+    #log.info(data)
     tmpData = {'size': kwargs['size'], 'name': kwargs['name'], 'image': kwargs['image'], 'public_ips': data.public_ips, 'private_ips': data.private_ips, 'state': 'RUNNING', 'location': None, 'id': data.uuid}
+    ret.update(tmpData)
+    #ret.update(data)
 
-    ret.update(data)
 
     if 'password' in data.extra:
         del data.extra['password']
